@@ -1,27 +1,30 @@
-/**
- * Takes an object, and drills down into the path,
- * returning the property requested
- *
- * @param obj - The object to dive
- * @param path - The path into the object
- * @param def - The default value to return
- */
-function safeDive(obj, path, def){
-    var ret = obj, lastprop;
-    if(typeof path === 'string'){
-        path = path.split('.');
+(function (root, factory) {
+    /*istanbul ignore next -- UMD loader boilerplate*/
+    if (typeof define === 'function' && define.amd) {
+        define(['dive-buddy'], function () {
+            return (root.diveBuddy = factory());
+        });
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else {
+        root.diveBuddy = factory();
     }
-    lastprop = path.pop();
-    for(var i=0,ii=path.length;i<ii;i++){
-        if(!ret.hasOwnProperty([path[i]])){
-            return def;
+}(this, function () {
+    return function safeDive(obj, path, def){
+        var ret = obj, lastprop;
+        if(typeof path === 'string'){
+            path = path.split('.');
         }
-        ret = ret[path[i]] || {};
+        lastprop = path.pop();
+        for(var i=0,ii=path.length;i<ii;i++){
+            if(!ret.hasOwnProperty([path[i]])){
+                return def;
+            }
+            ret = ret[path[i]] || {};
+        }
+        if(ret.hasOwnProperty(lastprop)){
+            return ret[lastprop];
+        }
+        return def;
     }
-    if(ret.hasOwnProperty(lastprop)){
-        return ret[lastprop];
-    }
-    return def;
-}
-
-module.exports = safeDive;
+}));
