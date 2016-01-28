@@ -1,0 +1,24 @@
+{
+  "name": "dive-buddy",
+  "version": "1.0.0",
+  "description": "Allows you to dive into properties without fear of NPE, lets you set a default return value",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha"
+  },
+  "keywords": [
+    "dereference",
+    "dive",
+    "drill-down",
+    "safety-drill",
+    "object-safety",
+    "safety"
+  ],
+  "author": "Greg Cochard",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.4"
+  }
+}
