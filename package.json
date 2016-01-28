@@ -1,10 +1,14 @@
 {
   "name": "dive-buddy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Allows you to dive into properties without fear of NPE, lets you set a default return value",
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover _mocha"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/gcochard/dive-buddy.git"
   },
   "keywords": [
     "dereference",
