@@ -29,7 +29,7 @@ var retrieved = diveBuddy(obj,'a.b.c.d.e.f.g','default');
 console.log(retrieved);
 // => 'default'
 
-retrieved = diveBuddy('obj,['a','b','c','d','someProperty'],'default');
+retrieved = diveBuddy(obj,['a','b','c','d','someProperty'],'default');
 console.log(retrieved);
 // => 'value'
 ```
