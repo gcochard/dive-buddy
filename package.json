@@ -1,6 +1,6 @@
 {
   "name": "dive-buddy",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Allows you to dive into properties without fear of NPE, lets you set a default return value",
   "main": "index.js",
   "scripts": {
