@@ -17,6 +17,7 @@
   "author": "Greg Cochard",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.4"

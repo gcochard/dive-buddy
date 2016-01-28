@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+    - "0.10"
+    - "0.12"
+    - 4
+    - 5
+
+branches:
+    except:
+        - gh-pages
+        - /^v\d+(\.\d+){2}/
+
+before_install:
+    - npm i -g npm
+
+after_script:
+    - if [[ `node --version` == *v0.12* ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
+
+cache:
+    directories:
+        - node_modules
